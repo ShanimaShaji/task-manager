@@ -10,7 +10,7 @@ const createPanel = document.getElementById("createPanel");
 
 let tasks = JSON.parse(localStorage.getItem(LS_KEY) || "[]");
 
-// ✅ Ask for notification permission when page loads
+
 if ("Notification" in window && Notification.permission === "default") {
   Notification.requestPermission();
 }
@@ -68,9 +68,9 @@ function render() {
     : "0%";
 }
 
-// ✅ Reminder check (runs every minute)
+
 function checkReminders() {
-  const today = new Date().toISOString().split("T")[0]; // yyyy-mm-dd
+  const today = new Date().toISOString().split("T")[0]; 
   tasks.forEach(task => {
     if (
       task.due &&
@@ -79,7 +79,7 @@ function checkReminders() {
       task.due <= today
     ) {
       notifyUser(task.title, task.due);
-      task.reminded = true; // only remind once
+      task.reminded = true;
       save();
     }
   });
@@ -131,5 +131,5 @@ taskForm.onsubmit = e => {
 };
 
 render();
-setInterval(checkReminders, 60000); // check every minute
-checkReminders(); // run once immediately
+setInterval(checkReminders, 60000); 
+checkReminders(); 
