@@ -1,0 +1,148 @@
+:root {
+  --bg: #0f1724;
+  --muted: #98a0b3;
+  --accent: #6ee7b7;
+  --accent-2: #60a5fa;
+  --danger: #fb7185;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: #e6eef8;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #111827;
+}
+
+.container {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.row {
+  margin-bottom: 0.75rem;
+}
+
+label {
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--muted);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.btn {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #000;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+}
+
+.btn.small {
+  font-size: 0.8rem;
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.4s;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+.task-item .left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.titleRow {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.badge.priority {
+  background: #374151;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.subText {
+  font-size: 0.8rem;
+  color: var(--muted);
+}

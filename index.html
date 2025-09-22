@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Manager — Progress Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Task Manager</h1>
+    <nav>
+      <button id="addTaskBtn" class="btn">+ New Task</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel create-panel hidden" id="createPanel">
+      <h2 id="formTitle">Add Task</h2>
+      <form id="taskForm">
+        <input type="hidden" id="taskId" />
+        <div class="row">
+          <label for="title">Title</label>
+          <input id="title" required maxlength="80" placeholder="e.g. Finish report" />
+        </div>
+
+        <div class="row two-cols">
+          <div>
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div>
+            <label for="due">Due Date</label>
+            <input id="due" type="date" />
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="notes">Notes</label>
+          <textarea id="notes" rows="3" placeholder="Extra details..."></textarea>
+        </div>
+
+        <div class="row align-right">
+          <button type="button" id="cancelBtn" class="btn ghost">Cancel</button>
+          <button type="submit" class="btn primary">Save Task</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel stats-panel">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <strong id="progressText">0 / 0 done</strong>
+        </div>
+        <div class="progress-bar">
+          <div id="progressFill" class="fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel list-panel">
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Tasks are saved in LocalStorage.</small>
+  </footer>
+
+  <template id="taskItemTpl">
+    <li class="task-item">
+      <div class="left">
+        <input type="checkbox" class="completeCheckbox" />
+        <div class="meta">
+          <div class="titleRow">
+            <span class="titleText"></span>
+            <span class="badge priority"></span>
+          </div>
+          <div class="subText"></div>
+        </div>
+      </div>
+      <div class="right">
+        <button class="btn small editBtn">Edit</button>
+        <button class="btn small danger deleteBtn">Delete</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
